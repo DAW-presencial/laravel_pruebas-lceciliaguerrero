@@ -48,6 +48,6 @@ Se ha configurado el idioma por defecto a español, ya sea en `locale => 'es'` c
 No me ha dado tiempo a rellenar el archivo de lenguaje [productos.php](resources/lang/es/productos.php).
 He hecho un ejemplo en [index.blade.php](resources/views/product/index.blade.php), para que vea que lo sé hacer.
 
-Por ejemplo: http://lcecilia.ifc33b.cifpfbmoll.eu/laravel_pruebas
+Por ejemplo: http://lcecilia.ifc33b.cifpfbmoll.eu/projects-laravel/laravel_pruebas-lceciliaguerrero/unit-08/project-laravel-crud-auth-authorize/public/product
 
 .env file Se ha generado una copia del fichero .env: - copia.env
