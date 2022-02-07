@@ -57,7 +57,7 @@
                 <tbody>
                 @foreach($prod as $item)
                     <tr>
-                        <td><img class="img-fluid" src="/storage/images/{{$item->photo}}"
+                        <td><img class="img-fluid" src="{{asset('storage/images/'.$item->photo)}}"
                                  alt="{{__($item->name)}}"></td>
                         <td>{{__($item->name)}}</td>
                         <td>{{__($item->trademark_name)}}</td>
