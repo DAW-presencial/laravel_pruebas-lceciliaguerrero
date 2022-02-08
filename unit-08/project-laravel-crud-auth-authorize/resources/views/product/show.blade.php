@@ -6,7 +6,7 @@
             <tbody>
             <tr>
                 <td class="fw-bold">{{__('Imagen del Producto')}}</td>
-                <td><img class="img-fluid" src="{{asset('storage/images/'.$item->photo)}}" alt="{{__($item->name)}}"></td>
+                <td><img class="img-fluid" src="{{asset('storage/images/'.$prod->photo)}}" alt="{{__($prod->name)}}"></td>
             <tr>
             <tr>
                 <td class="fw-bold">{{__('Nombre del Producto')}}</td>
