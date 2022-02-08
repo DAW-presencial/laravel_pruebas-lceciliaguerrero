@@ -160,7 +160,7 @@ class ProductController extends Controller
         $prod->minimum_stock = $request->minimum_stock;
         $prod->id_user = $userId;
         $prod->type_product_unit = $request->type_product_unit;
-        /*$prod->save();*/
+        $prod->save();/**/
 
         return redirect('/product')->with('mensaje', 'producto actualizado');
     }
