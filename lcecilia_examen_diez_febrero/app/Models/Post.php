@@ -17,9 +17,11 @@ class Post extends Model
         'contenido',
         'acceso',
         'caducable_comentable',
-        'fecha'
+        'fecha',
+        'id_user'
     ];
 
+    protected $casts = ['caducable_comentable' => 'array'];
     public function usuarios()
     {
         return $this->hasMany(User::class, 'id', 'id_user');

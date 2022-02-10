@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->enum('acceso', ['publico', 'privado']);
             $table->json('caducable_comentable');
             $table->date('fecha');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->timestamps();
         });
 

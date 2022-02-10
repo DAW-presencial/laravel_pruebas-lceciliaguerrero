@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Carbon\Carbon;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\Access\Gate;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -54,7 +56,7 @@ class PostController extends Controller
             'extracto' => $request->extracto,
             'contenido' => $request->contenido,
             'acceso' => $request->acceso,
-            'caducable_comentable' => $request->caducable_comentable,
+            'caducable_comentable' => $request->has('caducable_comentable') ? $request->get('caducable_comentable') : [],
             'fecha' => $request->fecha,
             'id_user' => $userId
         ];
@@ -92,6 +94,7 @@ class PostController extends Controller
      * @param Request $request
      * @param Post $post
      * @return Application|Redirector|RedirectResponse
+     * @throws AuthorizationException
      */
     public function update(Request $request, Post $post)
     {
@@ -104,7 +107,7 @@ class PostController extends Controller
         $pos->caducable_comentable = $request->caducable_comentable;
         $pos->fecha = $request->fecha;
         $pos->id_user = $userId;
-
+        $this->authorize('actualizar', $pos);
         $pos->save();
         return redirect('/post')->with('mensaje', 'post actualizado');
     }
